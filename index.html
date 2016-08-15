@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users name array</title>
+  </head>
+  <body>
+  <script>
+
+    var population = 5;
+    var users = new Array(population);
+
+    for (var i = 0; i < population; i++) {
+      do {
+        users[i] = prompt('Заполняем массив пользователей:');
+      } while (!users[i]);
+    }
+
+    var user = prompt('Введите имя пользователя:');
+    var user_exist = false;
+
+    for (var i = 0; i < population; i++) {
+      if (users[i] == user) {
+        user_exist = true;
+        break;
+      }
+    }
+    alert( user +
+      (user_exist ? ', вы успешно вошли' : ' - нет такого пользователя!')
+    );
+
+  </script>
+  </body>
+</html>
