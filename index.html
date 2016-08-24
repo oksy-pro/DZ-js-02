@@ -2,32 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Users name array</title>
+    <title>Users database</title>
   </head>
   <body>
   <script>
 
-    var population = 5;
-    var users = new Array(population);
+    var users = new Array(5);
+    fillUserArray(users);
+    checkUser(users, prompt('Введите имя пользователя:'));
 
-    for (var i = 0; i < population; i++) {
-      do {
-        users[i] = prompt('Заполняем массив пользователей:');
-      } while (!users[i]);
-    }
-
-    var user = prompt('Введите имя пользователя:');
-    var user_exist = false;
-
-    for (var i = 0; i < population; i++) {
-      if (users[i] == user) {
-        user_exist = true;
-        break;
+    function fillUserArray(users) {
+      for (var i = 0; i < users.length; i++) {
+        var msg = 'Заполняем массив пользователей:\nПользователь № ' + (1 + i);
+        do {
+          users[i] = prompt(msg);
+        } while (!users[i]);
       }
     }
-    alert( user +
-      (user_exist ? ', вы успешно вошли' : ' - нет такого пользователя!')
-    );
+
+    function checkUser(users, name) {
+      for (var i = 0; i < users.length; i++) {
+        if (users[i] == name) {
+          alert(name + ', вы успешно вошли!');
+          return;
+        }
+      }
+      alert( name + ' - нет такого пользователя!')
+    }
 
   </script>
   </body>
