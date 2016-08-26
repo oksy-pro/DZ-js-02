@@ -9,7 +9,8 @@
 
     var users = new Array(5);
     fillUserArray(users);
-    alert( checkUser(users, prompt('Введите имя пользователя:')) );
+    var name = prompt('Введите имя пользователя:');
+    alert(name + checkUser(users, name));
 
     function fillUserArray(users) {
       for (var i = 0; i < users.length; i++) {
@@ -23,10 +24,10 @@
     function checkUser(users, name) {
       for (var i = 0; i < users.length; i++) {
         if (users[i] == name) {
-          return name + ', вы успешно вошли!';
+          return ', вы успешно вошли!';
         }
       }
-      return name + ' - нет такого пользователя!';
+      return ' - нет такого пользователя!';
     }
 
   </script>
